@@ -1,0 +1,33 @@
+{
+    "name": "flower-garden",
+    "version": "1.0.0",
+    "description": "A delightful pixel-art flower garden React component with sprouting animations",
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "typecheck": "tsc --noEmit"
+    },
+    "keywords": [
+        "react",
+        "component",
+        "pixel-art",
+        "flowers",
+        "animation",
+        "svg",
+        "decorative"
+    ],
+    "author": "",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": ">=17.0.0",
+        "react-dom": ">=17.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0",
+        "typescript": "^5.0.0"
+    }
+}

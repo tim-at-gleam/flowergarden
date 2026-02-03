@@ -1,0 +1,35 @@
+/**
+ * Flower Garden CSS
+ *
+ * Include this file in your project to enable the sprout animation.
+ * Alternatively, define your own .flower-garden-sprout class with a similar animation.
+ */
+
+@keyframes flower-garden-sprout {
+    0% {
+        transform: translateX(-50%) scaleY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+    }
+}
+
+.flower-garden-sprout {
+    animation: flower-garden-sprout 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/**
+ * Optional: Add this to disable animations for users who prefer reduced motion
+ */
+@media (prefers-reduced-motion: reduce) {
+    .flower-garden-sprout {
+        animation: none;
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1);
+    }
+}
