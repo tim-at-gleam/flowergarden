@@ -608,7 +608,12 @@ export default function FlowerGardenFramer({
           }
         }
       },
-      { threshold: Math.max(0, Math.min(1, triggerThreshold)) },
+      {
+        threshold: Math.max(0, Math.min(1, triggerThreshold)),
+        // Start growing slightly before the footer is fully in view. Also makes
+        // triggering more robust for a bottom-of-page element.
+        rootMargin: "256px 0px 256px 0px",
+      },
     )
     observer.observe(node)
     return () => observer.disconnect()
@@ -648,7 +653,10 @@ export default function FlowerGardenFramer({
         width: "100%",
         maxWidth: "100%",
         height: "100%",
-        minHeight: 1,
+        // Flowers grow upward into this box and the box has overflow:hidden,
+        // so it MUST have real vertical room or they get clipped to nothing.
+        // 240 is a floor; set a taller fixed height in Framer to override.
+        minHeight: 240,
         boxSizing: "border-box",
         pointerEvents: "none",
         overflow: "hidden",
